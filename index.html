@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayaz Ahmad</title>
+
+    <!-- Tailwind CSS -->
+    <link href="./dist/output.css" rel="stylesheet">
+
+    <!-- Style.css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome 4.7 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="font-body bg-[#F7F5F7]">
+    <!-- Navbar Starts -->
+    <nav class="sm:p-3 md:p-4 p-5 flex items-center justify-between bg-[#F9F9FF]">
+        <a href="#" class="flex gap-2 items-center flex-1">
+            <img class="object-cover max-w-12 max-h-12" src="./assets/logo.png" alt="Logo">
+            <span class="text-lg font-medium font-display">ToDesktop</span>
+        </a>
+
+        <div id="nav-menu" class="hidden lg:flex gap-12">
+            <a class="text-lg font-medium hover:text-[#3238F2] transition ease-in-out" href="#">Pricing</a>
+            <a class="text-lg font-medium hover:text-[#3238F2] transition ease-in-out" href="#">Docs</a>
+            <a class="text-lg font-medium hover:text-[#3238F2] transition ease-in-out" href="#">ChangeLog</a>
+            <a class="text-lg font-medium hover:text-[#3238F2] transition ease-in-out" href="#">Blog</a>
+            <a class="text-lg font-medium hover:text-[#3238F2] transition ease-in-out" href="#">LogIn</a>
+        </div>
+
+        <div class="hidden lg:flex flex-1 justify-end">
+            <button class="flex items-center gap-2 border border-gray-300 px-6 py-2 rounded-lg hover:border-gray-600">
+                <img src="./assets/download.png" alt="">
+                <span class="font-bold">Electron Developers</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <button class="p-2 lg:hidden" onclick="handleMenu()">
+            <i class="fa-solid fa-bars text-gray-600"></i>
+        </button>
+
+        <!-- Navbar For Small Devices Starts-->
+        <div id="nav-dialog" class="hidden fixed bg-white z-50 lg:hidden inset-0 p-5">
+            <div id="nav-bar" class="flex justify-between">
+                <a href="#" class="flex gap-2 items-center">
+                    <img class="object-cover max-w-12 max-h-12" src="./assets/logo.png" alt="Logo">
+                    <span class="text-lg font-medium font-display">ToDesktop</span>
+                </a>
+                <button class="p-1 lg:hidden" onclick="handleMenu()">
+                    <i class="fa-solid fa-xmark text-gray-600"></i>
+                </button>
+            </div>
+            <div class="mt-3">
+                <a class="font-medium px-2 py-3 m-1 hover:bg-gray-50 transition block rounded-lg" href="">Pricing</a>
+                <a class="font-medium px-2 py-3 m-1 hover:bg-gray-50 transition block rounded-lg" href="">Docs</a>
+                <a class="font-medium px-2 py-3 m-1 hover:bg-gray-50 transition block rounded-lg" href="">ChangeLog</a>
+                <a class="font-medium px-2 py-3 m-1 hover:bg-gray-50 transition block rounded-lg" href="">Blog</a>
+                <a class="font-medium px-2 py-3 m-1 hover:bg-gray-50 transition block rounded-lg" href="">LogIn</a>
+            </div>
+            <div class="h-[1.1px] bg-gray-100 mt-6"></div>
+            <button class="w-full flex items-center gap-2 mt-4 px-2 py-4 hover:bg-gray-50">
+                <img src="./assets/download.png" alt="">
+                <span class="font-medium">Electron Developers</span>
+            </button>
+        </div>
+        <!-- Mobile Navbar Ends -->
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-gradient-to-bt from-purple-50 via-orange-50 to-white">
+
+        <!-- Main Hero Section -->
+        <div id="hero-container" class="mx-auto max-w-3xl px-6 lg:px-8 pt-8 pb-32 sm:pt-14 sm:pb-20">
+            <!-- Version Badge -->
+            <a href="#" class="group flex sm:mx-auto mb-10 gap-2 px-4 py-1 w-fit items-center
+                          border border-yellow-200 bg-[#FFF6CC] rounded-lg shadow-md
+                          transition-all duration-300
+                          hover:shadow-lg hover:-translate-y-1
+                          active:scale-95">
+
+                <span class="w-2 h-2 bg-yellow-400 rounded-full border border-yellow-600
+                               transition-all duration-300">
+                </span>
+
+                <p class="font-bold text-yellow-900">v0.35.0</p>
+                <i class="fa-solid fa-arrow-right inline-block align-baseline text-yellow-600 transition-transform duration-500 ease-in-out
+                    group-hover:translate-x-1"></i>
+            </a>
+
+            <div class="mb-2 hidden flex-col justify-center gap-5 sm:flex sm:flex-row">
+                <div>
+                    <i class="fa-solid fa-file-code text-gray-500 text-sm"></i>
+                    <span class="ml-2 text-base font-medium text-gray-500">Code Optional</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-laptop text-gray-500 text-sm"></i>
+                    <span class="ml-2 text-base font-medium text-gray-500">Drag & drop builder</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-laptop text-gray-500 text-sm"></i>
+                    <span class="ml-2 text-base font-medium text-gray-500">Windows, Mac, Linux</span>
+                </div>
+            </div>
+
+            <h1 class="mt-7 sm:text-center text-5xl sm:text-7xl font-bold">Web app to desktop app in minutes</h1>
+
+            <p class="mx-auto mt-8 max-w-2xl text-xl leading-8 text-gray-800 sm:text-center sm:text-2xl
+                ">Take your web app codebase and transform
+                it
+                into a
+                cross
+                platform desktop app
+                with
+                native
+                functionality.</p>
+
+            <!-- Buttons -->
+            <div id="button-container" class="mt-12 flex flex-col gap-4 text-center sm:flex-row sm:justify-center">
+
+                <a class="text-lg inline-block rounded-lg px-8 py-3 font-display font-semibold leading-7 shadow-sm ring-1 bg-blue-700 hover:bg-blue-600 text-white transition ease-in-out"
+                    href="">Download Now</a>
+
+                <a class="text-lg inline-block rounded-lg px-8 py-3 font-display font-semibold leading-7 shadow-sm ring-1 bg-white ring-gray-400 null hover:ring-gray-600 text-gray-900 transition ease-in-out"
+                    href="">Read Docs</a>
+            </div>
+        </div>
+
+        <!-- Companies Container -->
+        <div id="conpanies-container">
+            <div id="companies-title" class="flex justify-center gap-4 mt-2 mb-10">
+                <i class="fa-solid fa-arrow-down translate-y-3"></i>
+                <span class="font-medium">APPS POWERED BY TODESKTOP</span>
+                <i class="fa-solid fa-arrow-down translate-y-3"></i>
+            </div>
+            <!-- Companies Lines Group -->
+            <div id="lines-group">
+                <div id="line-1" class="flex gap-4 -translate-x-48">
+                    <!-- <div id="line-1" class="flex gap-4 mb-4 -translate-x-48"> -->
+                    <!-- Company # 1 -->
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                </div>
+                <div id="line-2" class="flex gap-4 mt-4 -translate-x-36">
+                    <!-- <div id="line-1" class="flex gap-4 mb-4 -translate-x-48"> -->
+                    <!-- Company # 1 -->
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                </div>
+                <div id="line-3" class="sm:hidden flex gap-4 mt-4 -translate-x-48">
+                    <!-- <div id="line-1" class="flex gap-4 mb-4 -translate-x-48"> -->
+                    <!-- Company # 1 -->
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                    <div
+                        class="flex h-24 w-24 flex-none flex-col items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white lg:h-32 lg:w-32">
+                        <!-- <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-14 md:h-14" src="./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                                alt=""> -->
+                        <img class="block h-12 w-12 lg:h-16 lg:w-16"" src=" ./assets/customer-logo-Modyfi.XB7uNI0T.png"
+                            alt="">
+                        <span
+                            class="text-[12px] sm:text-[13px] md:text-[16px] sm:font-medium md:font-bold">Company</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="flex flex-col gap-6 max-w-7xl px-6 py-10 m-14 mx-auto lg:px-1 lg:mt-10">
+
+        <!-- Step 1 Starts -->
+        <div>
+            <h2 class="text-5xl sm:font-semibold mb-14">How It Works</h2>
+            <div class="rounded-xl border border-gray-300 px-8 py-12 flex flex-col lg:flex-row">
+
+                <!-- Left -->
+                <div class="flex flex-col gap-6 lg:w-1/2">
+
+                    <span
+                        class="border border-yellow-200 bg-yellow-100 text-yellow-800 rounded-lg font-bold w-fit px-3 py-1 mb-6">Step
+                        1</span>
+
+                    <h3 class="text-5xl font-semibold">Bootstrap straight from your web app</h3>
+
+                    <p class="text-xl lg:font-medium mt-4 lg-mt-4">Copy and paste your web app url into ToDesktop.
+                        Customise
+                        your
+                        app
+                        design, app icon and window frame UI with no code.</p>
+
+                    <ul class="grid grid-cols-2 gap-3 sm:mt-8 lg:mt-10">
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right -->
+                <div class="lg:w-1/2">
+                    <img class="mt-8 md:mt-12 lg:mt-0" src="./assets/step 1.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Step 1 End -->
+        <!-- Step 2 Starts -->
+        <div>
+            <h2 class="text-5xl sm:font-semibold mb-14 mt-6">How It Works</h2>
+            <div class="rounded-xl border border-gray-300 px-8 py-12 flex flex-col lg:flex-row">
+
+                <!-- Left -->
+                <div class="flex flex-col gap-6 lg:w-1/2">
+
+                    <span
+                        class="border border-yellow-200 bg-yellow-100 text-yellow-800 rounded-lg font-bold w-fit px-3 py-1 mb-6">Step
+                        2</span>
+
+                    <h3 class="text-5xl font-semibold">Add desktop code to customise your web app</h3>
+
+                    <p class="text-xl lg:font-medium mt-4 lg-mt-4">No need to create a new repository, just add code
+                        from our desktop APIs to your codebase and get access to system level
+                        functionality.</p>
+
+                    <ul class="grid grid-cols-2 gap-3 sm:mt-8 lg:mt-10">
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right -->
+                <div class="lg:w-1/2">
+                    <img class="mt-8 md:mt-12 lg:mt-0" src="./assets/step 1.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Step 2 End -->
+        <!-- Step 3 Starts -->
+        <div>
+            <h2 class="text-5xl sm:font-semibold mb-14 mt-6">How It Works</h2>
+            <div class="rounded-xl border border-gray-300 px-8 py-12 flex flex-col lg:flex-row">
+
+                <!-- Left -->
+                <div class="flex flex-col gap-6 lg:w-1/2">
+
+                    <span
+                        class="border border-yellow-200 bg-yellow-100 text-yellow-800 rounded-lg font-bold w-fit px-3 py-1 mb-6">Step
+                        3</span>
+
+                    <h3 class="text-5xl font-semibold">Publish</h3>
+
+                    <p class="text-xl lg:font-medium mt-4 lg-mt-4">One-click will publish your desktop app to your
+                        customers and give you a download link to put on your website.</p>
+
+                    <ul class="grid grid-cols-2 gap-3 sm:mt-8 lg:mt-10">
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-gray-500"></i>
+                            <a class="text-lg font-medium text-gray-900 border-b border-gray-400 hover:border-gray-700 transition ease-in-out"
+                                href="">Check</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right -->
+                <div class="lg:w-1/2">
+                    <img class="mt-8 md:mt-12 lg:mt-0" src="./assets/step 1.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Step 3 End -->
+    </section>
+
+    <!-- Bento Grid -->
+    <section class="flex flex-col gap-6 max-w-7xl px-6 py-10 m-14 mx-auto lg:px-1 lg:mt-10">
+        <h2 class="text-5xl sm:font-semibold mb-14">ToDesktop handles
+            the details</h2>
+
+        <div id="grid-container" class="flex flex-col gap-6 lg:grid lg:grid-cols-3" style="grid-auto-rows: 96px;">
+            <!-- Box 1 -->
+            <div
+                class="rounded-2xl p-4 flex flex-col gap-6 items-center justify-center border-2 border-blue-200 hover:border-blue-300 bg-slate-50 hover:bg-slate-100 transition lg:row-start-1 lg:row-end-3">
+
+                <h3 class="text-2xl font-bold">Native Notifications</h3>
+                <img src="./assets/bento grid.png" alt="">
+            </div>
+            <!-- Box 2 -->
+            <div
+                class="rounded-2xl p-4 flex flex-col gap-6 items-center justify-center border-2 border-blue-200 hover:border-blue-300 bg-slate-50 hover:bg-slate-100 transition lg:row-start-3 lg:row-end-6">
+
+                <h3 class="text-2xl font-bold">Access to Native APIs</h3>
+
+                <p class="text-lg text-center font-light">ToDesktop ensures the underlying browser, performance
+                    improvements, security patches and additional features are always
+                    up to date.</p>
+
+                <img src="./assets/bento grid.png" alt="">
+            </div>
+            <!-- Box 3 -->
+            <div
+                class="rounded-2xl p-4 flex flex-col gap-6 items-center justify-center border-2 border-blue-200 hover:border-blue-300 bg-slate-50 hover:bg-slate-100 transition lg:row-start-1 lg:row-end-4">
+
+                <h3 class="text-2xl font-bold">Auto Updates</h3>
+
+                <p class="text-lg text-center font-light">We’ll ensure the underlying browser is up to date and deliver
+                    performance improvements, security patches, & additional
+                    features.</p>
+
+                <img src="./assets/bento grid.png" alt="">
+            </div>
+            <!-- Box 4 -->
+            <div
+                class="rounded-2xl p-4 flex flex-col gap-6 items-center justify-center border-2 border-blue-200 hover:border-blue-300 bg-slate-50 hover:bg-slate-100 transition lg:row-start-4 lg:row-end-6">
+
+                <h3 class="text-2xl font-bold">Customizable look and feel</h3>
+                <img src="./assets/bento grid.png" alt="">
+            </div>
+            <!-- Box 5 -->
+            <div
+                class="rounded-2xl p-4 flex flex-col gap-6 items-center justify-center border-2 border-blue-200 hover:border-blue-300 bg-slate-50 hover:bg-slate-100 transition lg:row-start-1 lg:row-end-3">
+
+                <h3 class="text-2xl font-bold">Plugins</h3>
+                <img src="./assets/bento grid.png" alt="">
+            </div>
+            <!-- Box 6 -->
+            <div
+                class="rounded-2xl p-4 flex flex-col gap-6 items-center justify-center border-2 border-blue-200 hover:border-blue-300 bg-slate-50 hover:bg-slate-100 transition lg:row-start-3 lg:row-end-6">
+
+                <h3 class="text-2xl font-bold">Native Installers</h3>
+
+                <p class="text-lg text-center font-light">We even provide a magic link which will detect your users
+                    operating system & download the most up to date version of
+                    your app.</p>
+
+                <img src="./assets/bento grid.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- User Testimonials -->
+    <section class="flex flex-col gap-6 max-w-7xl px-6 py-10 m-14 mx-auto lg:px-1 lg:mt-10">
+
+        <h2 class="text-5xl sm:font-semibold mb-14">Customer Stories</h2>
+
+        <div class="flex flex-col md:flex-row lg:flex-row gap-6">
+
+            <!-- Box 1 -->
+            <div
+                class="rounded-2xl px-10 pt-8 pb-10 flex flex-col justify-between gap-6 border-2 border-blue-200 hover:border-blue-300 bg-slate-50 hover:bg-slate-100 transition">
+
+                <div class="flex h-8 w-8 items-center justify-center rounded-full lg:h-12 lg:w-12 bg-purple-200">
+                    <i class="fa-solid fa-code text-purple-400"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold">Native APIs</h3>
+
+                <p class="text-lg font-light leading-snug">What sets ToDesktop apart is its seamless integration with
+                    native APIs using our existing web codebase. By tapping into
+                    APIs like Tray and Notifications, we've crafted an exceptionally polished desktop user experience. ”
+                </p>
+                <div class="flex items-center">
+                    <div class="flex">
+                        <!-- Image -->
+                        <div class="flex items-center">
+                            <img src="./assets/Rick.d7xHnafE.jpg" alt=""
+                                class="w-12 h-12 rounded-full object-cover border-2 border-white">
+                        </div>
+                    </div>
+                    <!-- Name -->
+                    <div class="ml-5">
+                        <h4 class="font-semibold">Rick Pastoor</h4>
+                        <p class="font-normal text-gray-700">Rise</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Box 2 -->
+            <div
+                class="rounded-2xl px-10 pt-8 pb-10 flex flex-col justify-between gap-6 border-2 border-blue-200 hover:border-blue-300 bg-slate-50 hover:bg-slate-100 transition">
+
+                <div class="flex h-8 w-8 items-center justify-center rounded-full lg:h-12 lg:w-12 bg-yellow-100">
+                    <i class="fa-solid fa-code text-yellow-400"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold">Native APIs</h3>
+
+                <p class="text-lg font-light leading-snug">What sets ToDesktop apart is its seamless integration with
+                    native APIs using our existing web codebase. By tapping into
+                    APIs like Tray and Notifications, we've crafted an exceptionally polished desktop user experience. ”
+                </p>
+                <div class="flex items-center">
+                    <div class="flex">
+                        <!-- Image -->
+                        <div class="flex items-center">
+                            <img src="./assets/Rick.d7xHnafE.jpg" alt=""
+                                class="w-12 h-12 rounded-full object-cover border-2 border-white">
+                        </div>
+                    </div>
+                    <!-- Name -->
+                    <div class="ml-5">
+                        <h4 class="font-semibold">Rick Pastoor</h4>
+                        <p class="font-normal text-gray-700">Rise</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Box 3 -->
+            <div
+                class="rounded-2xl px-10 pt-8 pb-10 flex flex-col justify-between gap-6 border-2 border-blue-200 hover:border-blue-300 bg-slate-50 hover:bg-slate-100 transition">
+
+                <div class="flex h-8 w-8 items-center justify-center rounded-full lg:h-12 lg:w-12 bg-purple-200">
+                    <i class="fa-solid fa-code text-purple-400"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold">Native APIs</h3>
+
+                <p class="text-lg font-light leading-snug">What sets ToDesktop apart is its seamless integration with
+                    native APIs using our existing web codebase. By tapping into
+                    APIs like Tray and Notifications, we've crafted an exceptionally polished desktop user experience. ”
+                </p>
+                <div class="flex items-center">
+                    <div class="flex">
+                        <!-- Image -->
+                        <div class="flex items-center">
+                            <img src="./assets/Rick.d7xHnafE.jpg" alt=""
+                                class="w-12 h-12 rounded-full object-cover border-2 border-white">
+                        </div>
+                    </div>
+                    <!-- Name -->
+                    <div class="ml-5">
+                        <h4 class="font-semibold">Rick Pastoor</h4>
+                        <p class="font-normal text-gray-700">Rise</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="rounded-2xl flex flex-col md:flex-row lg:flex-row items-center justify-between gap-6 px-2 py-12 sm:m-10 md:m-6 lg:m-10 lg:mt-10 bg-slate-50 border-2 border-blue-100">
+
+        <a class="flex items-center justify-center gap-4 px-6 href="">
+            <img src=" ./assets/logo.png" alt="">
+            <h3 class="text-lg font-bold">ToDesktop</h3>
+        </a>
+
+        <div class="flex sm:flex-col md:flex-row lg:flex-row items-center justify-center gap-10 px-6">
+            <p class="text-lg font-medium text-gray-600">Documentation</p>
+            <i class="fa-brands fa-twitter text-lg font-medium text-gray-600"></i>
+            <i class="fa-brands fa-github text-lg font-medium text-gray-600"></i>
+        </div>
+
+    </footer>
+
+    <div class="flex flex-col items-center gap-4 mt-8 mb-8">
+        <p class="text-md text-gray-600"><span class="text-[10px] text-white bg-yellow-600 px-1 p">Y</span> A Y
+            Combinator company.</p>
+        <p class="text-gray-400">© 2025 ToDesktop, Inc. All rights reserved.</p>
+    </div>
+
+    <!-- Script Js -->
+    <script src=" script.js"></script>
+</body>
+
+</html>
