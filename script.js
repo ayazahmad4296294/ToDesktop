@@ -28,7 +28,7 @@ function animate() {
         if (!el) return;
 
         const current =
-            parseFloat(el.dataset.x || 0) + delta * 0.15 * dir;
+            parseFloat(el.dataset.x || 0) + delta * 0.5 * dir;
 
         el.dataset.x = current;
         el.style.transform = `translateX(${current}px)`;
