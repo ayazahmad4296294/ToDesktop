@@ -4,9 +4,9 @@ function handleMenu() {
 }
 
 const lines = [
-    { el: document.getElementById("line-1"), dir: 1, start: -150 },
-    { el: document.getElementById("line-2"), dir: -1, start: -200 },
-    { el: document.getElementById("line-3"), dir: 1, start: -150 },
+    { el: document.getElementById("line-1"), dir: 1, start: -220 },
+    { el: document.getElementById("line-2"), dir: -1, start: -150 },
+    { el: document.getElementById("line-3"), dir: 1, start: -220 },
 ];
 
 let lastScrollY = window.scrollY;
